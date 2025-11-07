@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://1sl6oqalns15"]
+
+[ext_resource type="FontFile" uid="uid://j36assliriui" path="res://assets/core/Jersey10-Regular.ttf" id="1_kw5qu"]
+[ext_resource type="Script" uid="uid://biy3m2on0yq3t" path="res://assets/core/scene_change_button.gd" id="2_0y2mn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7vrkn"]
+font = ExtResource("1_kw5qu")
+font_size = 96
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+text = "SPACE GAME"
+label_settings = SubResource("LabelSettings_7vrkn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 48
+text = "PLAY"
+script = ExtResource("2_0y2mn")
+scene_file = "uid://beea6rviesc02"

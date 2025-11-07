@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdca7heyl5nmr"]
+
+[ext_resource type="PackedScene" uid="uid://cvgsp6dl6c23k" path="res://assets/core/planet.tscn" id="1_7o4qi"]
+[ext_resource type="Texture2D" uid="uid://cgf3l7o5il14t" path="res://assets/orbdorb/planet.png" id="2_xtpa4"]
+
+[node name="OrbdorbPlanet" instance=ExtResource("1_7o4qi")]
+scene_file = "uid://787fkg3mqgxo"
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_xtpa4")

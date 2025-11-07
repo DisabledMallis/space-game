@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv47f0fvq016v"]
+
+[ext_resource type="PackedScene" uid="uid://otec3qnvchuy" path="res://assets/space/ship.tscn" id="1_sxjdb"]
+[ext_resource type="Script" uid="uid://dil75h0gf0rni" path="res://assets/space/ship_controller.gd" id="2_ayjeg"]
+[ext_resource type="PackedScene" uid="uid://dy1pdu1yglffi" path="res://assets/blorgorb/blorgorb_planet.tscn" id="3_dk38l"]
+[ext_resource type="PackedScene" uid="uid://cdca7heyl5nmr" path="res://assets/orbdorb/orbdorb_planet.tscn" id="4_fhkx4"]
+
+[node name="Space" type="Node2D"]
+
+[node name="Ship" parent="." instance=ExtResource("1_sxjdb")]
+can_sleep = false
+
+[node name="Camera2D" type="Camera2D" parent="Ship"]
+
+[node name="ShipController" type="Node" parent="Ship"]
+script = ExtResource("2_ayjeg")
+metadata/_custom_type_script = "uid://dil75h0gf0rni"
+
+[node name="Planet" parent="." instance=ExtResource("3_dk38l")]
+position = Vector2(592, -322)
+
+[node name="OrbdorbPlanet" parent="." instance=ExtResource("4_fhkx4")]
+position = Vector2(-582, 296)

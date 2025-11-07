@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://ggyasi73xs43"]
+
+[ext_resource type="Script" uid="uid://dvrr1inwpmgxa" path="res://assets/core/player.gd" id="1_80t0q"]
+[ext_resource type="Texture2D" uid="uid://4dor7lwxgqou" path="res://assets/core/player.png" id="1_jg53c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jg53c"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80t0q"]
+size = Vector2(27, 30)
+
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("interact_label", "floor_raycast")]
+script = ExtResource("1_80t0q")
+interact_label = NodePath("CanvasLayer/Label")
+floor_raycast = NodePath("FloorRaycast")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jg53c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 3)
+shape = SubResource("CapsuleShape2D_jg53c")
+
+[node name="DragArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragArea"]
+position = Vector2(-3.5, 2)
+shape = SubResource("RectangleShape2D_80t0q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Press E to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FloorRaycast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 23)

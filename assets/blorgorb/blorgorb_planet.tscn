@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy1pdu1yglffi"]
+
+[ext_resource type="PackedScene" uid="uid://cvgsp6dl6c23k" path="res://assets/core/planet.tscn" id="1_o2bos"]
+
+[node name="Planet" instance=ExtResource("1_o2bos")]
+scene_file = "uid://beea6rviesc02"
